@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { ZmcOutline } from "./_components/Logo";
 import testclip from "./assets/teamkillfull.mp4";
-import { Button } from "./components/ui/button";
 import { Badge } from "./components/ui/badge";
 import players from "./assets/players.png";
 import Rodal from "rodal";
@@ -92,7 +91,7 @@ export default function Home(): JSX.Element {
     setNewPlayerList(playerList.sort(() => Math.random() - 0.5));
   }
   return (
-    <div className="flex items-center justify-center w-full h-screen transition-all bg-background font-body">
+    <div className="flex items-center justify-center w-full h-screen transition-all select-none bg-background font-body">
       <div className=" bg-background w-[100%] h-full">
         <div className="relative flex flex-col">
           <div className="relative ">
@@ -136,13 +135,13 @@ export default function Home(): JSX.Element {
             </div>
           </div>
           <div>
-            <h1 className="text-3xl font-bold text-center font-heading">
+            <h1 className="mt-2 text-3xl font-bold text-center font-heading">
               Meet our players
             </h1>
             <p className="text-xl text-center text-gray-200 font-body">
               We have a wide variety of players, from silver to global elite
             </p>
-            <div className="flex flex-col md:flex-row w-[90%] md:w-[60vw] mx-auto gap-5 md:flex-wrap justify-center">
+            <div className="flex flex-col md:flex-row w-[90%] md:w-[60vw] mx-auto gap-5 md:flex-wrap justify-center mt-2">
               {/* Reshuffle button */}
               {newPlayerList}
             </div>
@@ -199,13 +198,9 @@ export default function Home(): JSX.Element {
                 </div>
               </Rodal>
             </p>
-            <Button
-              className="mt-5 mb-20"
-              variant="secondary"
-              onClick={() => show(<h1>Apply to ZMC</h1>, <ApplyForm />)}
-            >
-              Join us
-            </Button>
+            <div className="transition-all bg-transparent rounded-md hover:bg-secondary w-fit">
+            <button onClick={() => show(<>Apply to the team</>, <ApplyForm />)} className="px-5 py-2 rounded-md w-fit bg-gradient-to-br from-accent to-transparent text-text">Join the Team</button>
+          </div>
           </div>
         </div>
       </div>

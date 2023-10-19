@@ -64,9 +64,9 @@ export default function Contact() {
         >
             1600 Pennsylvania Ave NW, Washington, DC 20500
         </Button><br></br>
-        <Button onClick={() => show(<>Apply to join the team</>, <ApplyForm />)}>
-            Or you can reach out by applying to join us
-        </Button>
+        <div className="transition-all bg-transparent rounded-md hover:bg-secondary w-fit">
+            <button onClick={() => show(<>Apply to the team</>, <ApplyForm />)} className="px-5 py-2 rounded-md w-fit bg-gradient-to-br from-accent to-transparent text-text">Or you can reach out by applying to join us</button>
+          </div>
       <Alert className="mt-2">Keep in mind we cannot guarantee we will respond to your inquiry!</Alert>
     </div>
   );

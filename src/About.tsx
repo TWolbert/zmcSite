@@ -1,7 +1,7 @@
 import disconnect from "./assets/tkdisconnect.png";
 import players from "./assets/players.png";
 import toxchat from './assets/toxicchat.png'
-import { Button } from "./components/ui/button";
+
 import { useState } from "react";
 import Rodal from "rodal";
 import ApplyForm from "./UIComponents/ApplyForm";
@@ -75,7 +75,10 @@ export default function About(): JSX.Element {
             you're a newcomer trying to master the basics or a seasoned pro
             looking for a new challenge, you'll find a home with us.
           </p>
-          <Button onClick={() => show(<>Apply to the team</>, <ApplyForm />)} className="rounded-md w-fit bg-gradient-to-br from-accent to-transparent text-text">Join the Team</Button>
+          <div className="transition-all bg-transparent rounded-md hover:bg-secondary w-fit">
+            <button onClick={() => show(<>Apply to the team</>, <ApplyForm />)} className="px-5 py-2 rounded-md w-fit bg-gradient-to-br from-accent to-transparent text-text">Join the Team</button>
+          </div>
+          
         </div>
       </div>
     <div className="flex gap-5">
