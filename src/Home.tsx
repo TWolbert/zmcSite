@@ -200,7 +200,7 @@ export default function Home(): JSX.Element {
               </Rodal>
             </p>
             <div className="transition-all bg-transparent rounded-md hover:bg-background w-fit">
-            <button onClick={() => show(<>Apply to the team</>, <ApplyForm />)} className="px-5 py-2 rounded-md w-fit bg-secondary-to-br from-accent to-transparent text-text">Join the Team</button>
+            <button onClick={() => show(<>Apply to the team</>, <ApplyForm />)} className="px-5 py-2 rounded-md w-fit bg-gradient-to-br from-secondary to-transparent text-text">Join the Team</button>
           </div>
           </div>
         </div>
