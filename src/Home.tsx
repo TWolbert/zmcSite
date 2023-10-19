@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ZmcOutline } from "./_components/Logo";
-import testclip from "./assets/teamkillfull.mp4"
+import testclip from "./assets/teamkillfull.mp4";
 import { Button } from "./components/ui/button";
 import { Badge } from "./components/ui/badge";
 import players from "./assets/players.png";
@@ -9,6 +9,8 @@ import "rodal/lib/rodal.css";
 import ApplyForm from "./UIComponents/ApplyForm";
 
 export default function Home(): JSX.Element {
+  const staffRef = useRef(null);
+
   const playerList = [
     <Player
       name="_Voider_"
@@ -53,6 +55,36 @@ export default function Home(): JSX.Element {
 
   useEffect(() => {
     reshuffleplayers();
+
+    // Wait for staffref to load
+    let interval;
+    let leftScroll = true;
+    interval = setInterval(() => {
+      if (leftScroll) {
+        console.log("left");
+        staffRef.current.scrollLeft -= 1000;
+        leftScroll = false;
+      } else {
+        console.log("right");
+        staffRef.current.scrollLeft += 1000;
+        leftScroll = true;
+      }
+    }, 10000);
+
+    // when leftclick on staffref, scroll right
+    staffRef.current.addEventListener("click", () => {
+      // If already on right side, scroll to left
+      if (
+        staffRef.current.scrollLeft ==
+        staffRef.current.scrollWidth - staffRef.current.clientWidth
+      ) {
+        staffRef.current.scrollLeft = 0;
+      } else {
+        staffRef.current.scrollLeft += 1000;
+      }
+    });
+
+    return () => clearInterval(interval);
   }, []);
 
   function reshuffleplayers() {
@@ -68,8 +100,7 @@ export default function Home(): JSX.Element {
             {/* Embed video */}
             <video
               className={
-                "w-full aspect-[25/10] object-cover " +
-                `bg-[url('${players}')]`
+                "w-full aspect-[25/10] object-cover " + `bg-[url('${players}')]`
               }
               autoPlay
               loop
@@ -97,7 +128,10 @@ export default function Home(): JSX.Element {
               </a>
             </div>
             <div className="flex justify-center w-full">
-              <ZmcOutline fill="#4f4f4f" className="h-[30vh] w-full object-cover drop-shadow-xl text-gray-200" />
+              <ZmcOutline
+                fill="#4f4f4f"
+                className="h-[30vh] w-full object-cover drop-shadow-xl text-gray-200"
+              />
             </div>
           </div>
           <div>
@@ -119,17 +153,22 @@ export default function Home(): JSX.Element {
             <p className="text-xl text-center text-gray-200 font-body">
               We also have 2 coaches to keep everything running smoothly
             </p>
-            <div className="flex flex-row w-[90vw] md:w-[60vw] mx-auto gap-5 overflow-x-scroll scrollbar-thin scrollbar-track-secondary scrollbar-thumb-white scrollbar-thumb-rounded-md snap-x snap-mandatory relative rounded-xl">
-              <Manager
-                name="Bitmap7487"
-                image="https://cdn.discordapp.com/avatars/746726733469974568/04cc1b0479f5e2e95e63598a00c092c6.webp?size=512"
-                about="Last played CS in 2019"
-              />
-              <Manager
-                name="R1nkol"
-                image="https://cdn.discordapp.com/avatars/677514944370966572/daece2355cf830a6eb06ed34596ac9d3.webp?size=512"
-                about="Has never played CS"
-              />
+            <div>
+              <div
+                ref={staffRef}
+                className=" scroll-smooth flex flex-row w-[90vw] md:w-[60vw] mx-auto gap-5 overflow-x-scroll scrollbar-thin scrollbar-track-secondary scrollbar-thumb-white scrollbar-thumb-rounded-md snap-x snap-mandatory relative rounded-xl"
+              >
+                <Manager
+                  name="Bitmap7487"
+                  image="https://cdn.discordapp.com/avatars/746726733469974568/04cc1b0479f5e2e95e63598a00c092c6.webp?size=512"
+                  about="Last played CS in 2019"
+                />
+                <Manager
+                  name="R1nkol"
+                  image="https://cdn.discordapp.com/avatars/677514944370966572/daece2355cf830a6eb06ed34596ac9d3.webp?size=512"
+                  about="Has never played CS"
+                />
+              </div>
             </div>
           </div>
           <div className="mt-10"></div>
@@ -214,8 +253,8 @@ function Manager(props: {
           alt={props.name}
           className="md:h-[80%] aspect-square rounded-full"
         />
-        <h1 className="text-2xl font-bold">{props.name}</h1>
-        <p className="text-xl">{props.about}</p>
+        <h1 className="text-2xl font-bold select-none">{props.name}</h1>
+        <p className="text-xl select-none">{props.about}</p>
       </div>
     </div>
   );
