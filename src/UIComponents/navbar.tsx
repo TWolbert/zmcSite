@@ -45,7 +45,7 @@ export default function Navbar(props: any) {
         >
           Contact
         </a>
-        <a href="https://youtube.com/@zmc-cs2">
+        <a href="https://youtube.com/@zmc-cs2" target="_blank">
           <div className="flex items-center justify-center">
             <Youtube className="w-10 h-10 text-text" />
           </div>
