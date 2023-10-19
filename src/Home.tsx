@@ -153,6 +153,7 @@ export default function Home(): JSX.Element {
             <p className="text-xl text-center text-gray-200 font-body">
               We also have 2 coaches to keep everything running smoothly
             </p>
+            <p className="text-sm text-center text-gray-500 font-body">Scroll to see more staff members</p>
             <div>
               <div
                 ref={staffRef}
