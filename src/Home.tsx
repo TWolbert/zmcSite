@@ -57,30 +57,31 @@ export default function Home(): JSX.Element {
     reshuffleplayers();
 
     // Wait for staffref to load
-    let interval;
     let leftScroll = true;
-    interval = setInterval(() => {
+    const staffelement = document.getElementById("staffelement");
+    if (!staffelement) return;
+    const interval = setInterval(() => {
       if (leftScroll) {
         console.log("left");
-        staffRef.current.scrollLeft -= 1000;
+        staffelement.scrollLeft -= 1000;
         leftScroll = false;
       } else {
         console.log("right");
-        staffRef.current.scrollLeft += 1000;
+        staffelement.scrollLeft += 1000;
         leftScroll = true;
       }
     }, 10000);
 
     // when leftclick on staffref, scroll right
-    staffRef.current.addEventListener("click", () => {
+    staffelement.addEventListener("click", () => {
       // If already on right side, scroll to left
       if (
-        staffRef.current.scrollLeft ==
-        staffRef.current.scrollWidth - staffRef.current.clientWidth
+        staffelement.scrollLeft ==
+        staffelement.scrollWidth - staffelement.clientWidth
       ) {
-        staffRef.current.scrollLeft = 0;
+        staffelement.scrollLeft = 0;
       } else {
-        staffRef.current.scrollLeft += 1000;
+        staffelement.scrollLeft += 1000;
       }
     });
 
@@ -156,6 +157,7 @@ export default function Home(): JSX.Element {
             <div>
               <div
                 ref={staffRef}
+                id="staffelement"
                 className=" scroll-smooth flex flex-row w-[90vw] md:w-[60vw] mx-auto gap-5 overflow-x-scroll scrollbar-thin scrollbar-track-secondary scrollbar-thumb-white scrollbar-thumb-rounded-md snap-x snap-mandatory relative rounded-xl"
               >
                 <Manager
