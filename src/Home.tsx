@@ -1,11 +1,12 @@
 import { useEffect, useState, useRef } from "react";
-import { ZmcOutline } from "./_components/Logo";
+import { YouTubeThumbnail, ZmcOutline } from "./_components/Logo";
 import testclip from "./assets/teamkillfull.mp4";
 import { Badge } from "./components/ui/badge";
 import players from "./assets/players.png";
 import Rodal from "rodal";
 import "rodal/lib/rodal.css";
 import ApplyForm from "./UIComponents/ApplyForm";
+import zmccs2VideoThumbnail from "./assets/zmccs2thumbnai.png";
 
 export default function Home(): JSX.Element {
   const staffRef = useRef(null);
@@ -134,6 +135,33 @@ export default function Home(): JSX.Element {
               />
             </div>
           </div>
+
+          <div className=" z-50 w-[90%] md:w-[60%] mt-5 bg-gradient-to-bl from-background to-secondary mx-auto p-5 rounded-xl shadow-md flex flex-col gap-5">
+            <div className="flex flex-col justify-center w-full">
+              <h1 className="text-3xl font-bold border-b-2 text-heading border-background w-fit">
+                Latest Video
+              </h1>
+              <p className="mt-4 text-xl text-gray-200 font-body">
+                We play CS2 Wingman on Nuke whilst being high
+              </p>
+              <a
+                target="_blank"
+                href="https://www.youtube.com/watch?v=q_QcRqwdE9k"
+                className="px-3 py-1 rounded-md shadow-md bg-accent w-fit"
+              >
+                Watch now...
+              </a>
+            </div>
+            <div className="flex justify-center w-full">
+              <a target="_blank" href="https://www.youtube.com/watch?v=q_QcRqwdE9k" className="w-full">
+              <YouTubeThumbnail
+                src={zmccs2VideoThumbnail}
+                alt="testclip"
+                className="h-[30vh] w-full rounded-xl drop-shadow-xl hover:scale-125 transition-all"
+              />
+              </a>
+            </div>
+          </div>
           <div>
             <h1 className="mt-2 text-3xl font-bold text-center font-heading">
               Meet our players
@@ -153,7 +181,9 @@ export default function Home(): JSX.Element {
             <p className="text-xl text-center text-gray-200 font-body">
               We also have 2 coaches to keep everything running smoothly
             </p>
-            <p className="text-sm text-center text-gray-500 font-body">Scroll to see more staff members</p>
+            <p className="text-sm text-center text-gray-500 font-body">
+              Scroll to see more staff members
+            </p>
             <div>
               <div
                 ref={staffRef}
@@ -200,8 +230,13 @@ export default function Home(): JSX.Element {
               </Rodal>
             </p>
             <div className="transition-all bg-transparent rounded-md hover:bg-background w-fit">
-            <button onClick={() => show(<>Apply to the team</>, <ApplyForm />)} className="px-5 py-2 rounded-md w-fit bg-gradient-to-br from-secondary to-transparent text-text">Join the Team</button>
-          </div>
+              <button
+                onClick={() => show(<>Apply to the team</>, <ApplyForm />)}
+                className="px-5 py-2 rounded-md w-fit bg-gradient-to-br from-secondary to-transparent text-text"
+              >
+                Join the Team
+              </button>
+            </div>
           </div>
         </div>
       </div>

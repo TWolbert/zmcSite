@@ -11,6 +11,12 @@ function ImageLogo(props:any) {
     )
 }
 
+function YouTubeThumbnail(props:any) {
+    return (
+        <img src={props.src} alt={props.alt} className={props.className} />
+    )
+}
+
 function ZmcOutline(props:any) {
     return (
         // Render svg as component
@@ -98,4 +104,4 @@ fill={props.fill} stroke="none">
     )
 }
 
-export { ZmcLogo, ImageLogo, ZmcOutline }
+export { ZmcLogo, ImageLogo, ZmcOutline, YouTubeThumbnail }
