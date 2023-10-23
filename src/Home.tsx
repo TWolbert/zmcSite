@@ -29,7 +29,7 @@ export default function Home(): JSX.Element {
     />,
     <Player
       name="TurboDaan_"
-      image="https://cdn.discordapp.com/avatars/302496302732673025/8f0d107be4934611fb21a75cb729eab9.webp?size=512"
+      image="https://cdn.discordapp.com/avatars/302496302732673025/dd4e4699d2f080e35b5caa40d12d77e1.webp?size=512"
       rank="Global Elite"
     />,
     <Player
