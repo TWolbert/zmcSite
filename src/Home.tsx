@@ -19,17 +19,17 @@ export default function Home(): JSX.Element {
     />,
     <Player
       name="groteharigekerel"
-      image="https://cdn.discordapp.com/avatars/267018192579330052/51c65ad48ccd98383efa4967c3ea215b.webp?size=512"
+      image="https://avatars.akamai.steamstatic.com/368a7f1abb4dfe5509e3abdeee5fb1ab053e3dbf_full.jpg"
       rank="Global Elite"
     />,
     <Player
       name="Killshot"
       image="https://avatars.cloudflare.steamstatic.com/879fbff9d692a43aebd8d8d5bccb1610b76142ad_full.jpg"
-      rank="Silver I"
+      rank="Silver II"
     />,
     <Player
       name="TurboDaan_"
-      image="https://cdn.discordapp.com/avatars/302496302732673025/dd4e4699d2f080e35b5caa40d12d77e1.webp?size=512"
+      image="https://avatars.akamai.steamstatic.com/d1ceeb19be89da9dcc78542c65b94ae84190589c_full.jpg"
       rank="Global Elite"
     />,
     <Player
@@ -142,11 +142,11 @@ export default function Home(): JSX.Element {
                 Latest Video
               </h1>
               <p className="mt-4 text-xl text-gray-200 font-body">
-                We play CS2 Wingman on Nuke whilst being high
+                ZMC | Teun best player ever
               </p>
               <a
                 target="_blank"
-                href="https://www.youtube.com/watch?v=q_QcRqwdE9k"
+                href="https://www.youtube.com/watch?v=_8tj5ewTfvk&ab_channel=ZMC"
                 className="px-3 py-1 rounded-md shadow-md bg-accent w-fit"
               >
                 Watch now...
