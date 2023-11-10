@@ -153,7 +153,7 @@ export default function Home(): JSX.Element {
               </a>
             </div>
             <div className="flex justify-center w-full">
-              <a target="_blank" href="https://www.youtube.com/watch?v=q_QcRqwdE9k" className="w-full">
+              <a target="_blank" href="https://www.youtube.com/watch?v=_8tj5ewTfvk&ab_channel=ZMC" className="w-full">
               <YouTubeThumbnail
                 src={zmccs2VideoThumbnail}
                 alt="testclip"
